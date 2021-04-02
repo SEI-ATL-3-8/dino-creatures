@@ -13,8 +13,7 @@ Overview:
 ### Setup
 
 - `npm init -y`
-- `npm i -g nodemon`
-- `npm i express pg sequelize body-parser rowdy-logger`
+- `npm i express pg sequelize rowdy-logger`
 - add a `.gitignore` and add node_modules and or config to it
 - in your package.json add these to the scripts after "test"
 - <pre>
@@ -65,11 +64,14 @@ Overview:
 <code>
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3001;
-const bodyParser = require('body-parser')
+const PORT = process.env.PORT || 3000;
+const rowdy = require('rowdy-logger')
 
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+const routesReport = rowdy.begin(app)
+routesReport.print()
+
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }));
 
 app.listen(PORT, () => {
 console.log(`Listening on port ${PORT}`);
@@ -78,7 +80,7 @@ console.log(`Listening on port ${PORT}`);
 
 </pre>
 - once you've got this setup go to your terminal and run 
-`npm run dev` and you should see your server running on 3001!!!
+`npm run dev` and you should see your server running on 3000!!!
 - lets open our home boy postman 
 ## PART 2
 
