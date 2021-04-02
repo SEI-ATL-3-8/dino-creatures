@@ -68,13 +68,12 @@ const PORT = process.env.PORT || 3000;
 const rowdy = require('rowdy-logger')
 
 const routesReport = rowdy.begin(app)
-routesReport.print()
 
 app.use(express.json())
-app.use(express.urlencoded({ extended: false }));
 
 app.listen(PORT, () => {
-console.log(`Listening on port ${PORT}`);
+console.log(`Listening on port ${PORT}`)
+routesReport.print()
 })
 </code>
 
