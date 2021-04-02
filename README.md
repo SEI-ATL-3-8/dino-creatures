@@ -76,7 +76,9 @@ console.log(`Listening on port ${PORT}`);
 </code>
 
 </pre>
-
+- once you've got this setup go to your terminal and run 
+`npm run dev` and you should see your server running on 3001!!!
+- lets open our home boy postman 
 ## PART 2
 
 - Now that we've created the Dinos table and added CRUD you will create the crud for creatures!!
