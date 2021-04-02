@@ -15,6 +15,23 @@ Overview:
 - `npm init -y`
 - `npm i -g nodemon`
 - `npm i express pg sequelize body-parser rowdy-logger`
+- in your package.json add these to the scripts after "test"
+- <pre>
+  <code>
+      "start": "node server.js",
+      "dev": "nodemon server.js"
+  </code>
+  </pre>
+- it should look like this
+  - <pre>
+      <code>
+      "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node server.js",
+      "dev": "nodemon server.js"
+    },
+      </code>
+      </pre>
 - sequelize init
 - update config.json (change dialect to postgres)
 - create database
